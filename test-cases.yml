@@ -667,10 +667,10 @@
   test-data: |
     Отсутствует 
   steps:
-   - Открыть главную страницу сайта
-   - Проскролить страницу вниз
+    - Открыть главную страницу сайта
+    - Проскролить страницу вниз
   expected-result: |
-   Отсутствует доступ к просмотру и отправки сообщений в чате у неавторизованных пользователей
+    Отсутствует доступ к просмотру и отправки сообщений в чате у неавторизованных пользователей
 
 - summary: |
     Проверка переключения меню чата на странице турнира
@@ -681,14 +681,14 @@
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - Открыть главную страницу сайта
-   - Нажать “Create a game”
-   - Выбрать level = 1 звезда
-   - Выбрать Game Type = With a bot
-   - Нажать “Create a battle”
-   - В меню чата выбрать “Notification”
+    - Открыть главную страницу сайта
+    - Нажать “Create a game”
+    - Выбрать level = 1 звезда
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - В меню чата выбрать “Notification”
   expected-result: |
-   В чате на странице турнира открывается раздел уведомлений
+    В чате на странице турнира открывается раздел уведомлений
 
 - summary: |
     Проверка записи турнира после завершения игры
@@ -699,13 +699,46 @@
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - Открыть главную страницу сайта
-   - Открыть раздел "Completed games"
-   - Выбрать турнир нажав "Show"
-   - Нажать "Open history" 
-   - Воспроизвести запись турнира нажав "Play"
+    - Открыть главную страницу сайта
+    - Открыть раздел "Completed games"
+    - Выбрать турнир нажав "Show"
+    - Нажать "Open history" 
+    - Воспроизвести запись турнира нажав "Play"
   expected-result: |
-   Завершенный турнир доступен в записи для просмотра 
+    Завершенный турнир доступен в записи для просмотра 
+
+- summary: |
+    Проверка кнопки "Open History" 
+  requirement: |
+    После нажатия на кнопку "Open History" во время турнира редактор вывода кода отображается как проигрователь
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Open History"
+  expected-result: |
+    Редактор вывода кода отображается как проигрователь
+
+- summary: |
+    Проверка воспроизведения игры в разделе "Open History" 
+  requirement: |
+    После нажатия на кнопку "Play" проигрывателя в разделе "Open History" во время турнира редактор вывода кода воспроизводит запись турнира к текущему моменту
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Open History"
+  expected-result: |
+    Редактор вывода кода воспроизводит запись турнира к текущему моменту
 
 - summary: |
     Проверка получения очков после турнира
@@ -717,17 +750,17 @@
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
   return width * length; }; module.exports = solution;
   steps:
-   - На главной странице нажать “Create a game”
-   - Выбрать level = 1 звезды
-   - Выбрать Game Type = With a bot
-   - Выбрать Task = rect_area
-   - Нажать “Create a battle”
-   - В редакторе кода выбрать язык программирования "NodeJS"
-   - Ввести в поле ввода кода значение "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Выбрать Task = rect_area
+    - Нажать “Create a battle”
+    - В редакторе кода выбрать язык программирования "NodeJS"
+    - Ввести в поле ввода кода значение "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
   return width * length; }; module.exports = solution;"
-   - Нажать "Run"
+    - Нажать "Run"
   expected-result: |
-   В редакторе кода победителя отображается значение "Score:1". Победитель получает очки
+    В редакторе кода победителя отображается значение "Score:1". Победитель получает очки
 
 - summary: |
     Проверка перевода на русский язык задания на странице турнира 
@@ -738,13 +771,56 @@
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - На главной странице нажать “Create a game”
-   - Выбрать level = 1 звезды
-   - Выбрать Game Type = With a bot
-   - Нажать “Create a battle”
-   - В редакторе кода переключить язык задания на русский язык
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - В редакторе кода переключить язык задания на русский язык
   expected-result: |
-   В редакторе кода текст задания меняется с английского на русский язык
+    В редакторе кода текст задания меняется с английского на русский язык
+
+- summary: |
+    Проверка кнопки "Output" с правильным решением задания
+  requirement: |
+    После нажатия на кнопку "Output" после верного решения задачи открывается страница с результатом проверки теста
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
+  return width * length; }; module.exports = solution;"
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Выбрать Task = rect_area
+    - В редакторе выбрать язык программирования "NodeJS"
+    - В редакторе ввести знчение = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
+  return width * length; }; module.exports = solution;"
+    - Нажать "Run"
+    - Нажать “Output”
+  expected-result: |
+    Открывается страница с результатом проверки теста. Задание решено верно
+
+- summary: |
+    Проверка кнопки "Output" с неправильным решением задания
+  requirement: |
+    После нажатия на кнопку "Output" после верного решения задачи открывается страница с результатом проверки теста
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
+  return width * length; }; module.exports = solution;"
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Выбрать Task = rect_area
+    - В редакторе выбрать язык программирования "NodeJS"
+    - В редакторе ввести знчение = "Привет"
+    - Нажать "Run"
+    - Нажать “Output”
+  expected-result: |
+    Открывается страница с результатом проверки теста. Задание решено не верно
 
 - summary: |
     Проверка кнопки "Give up" 
@@ -755,13 +831,13 @@
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - На главной странице нажать “Create a game”
-   - Выбрать level = 1 звезды
-   - Выбрать Game Type = With a bot
-   - Нажать “Create a battle”
-   - Нажать "Give up"
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Give up"
   expected-result: |
-   Турнир заканчивается с поражением пользователя
+    Турнир заканчивается с поражением пользователя
 
 - summary: |
     Проверка кнопки "Reset editor" 
@@ -772,31 +848,207 @@
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - На главной странице нажать “Create a game”
-   - Выбрать level = 1 звезды
-   - Выбрать Game Type = With a bot
-   - Нажать “Create a battle”
-   - В редакторе вывода текста написать "Привет!"
-   - Нажать "Reset editor"
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - В редакторе вывода текста написать "Привет!"
+    - Нажать "Reset editor"
   expected-result: |
-   Все изменения в редакторе вывода текста сбрасываются до первоначального состояния
+    Все изменения в редакторе вывода текста сбрасываются до первоначального состояния
 
 - summary: |
     Проверка кнопки "Run" 
   requirement: |
     После нажатия на кнопку "Run" осуществляется проверка введенного кода с выводом результата
+  prerequisites:
     Необходима авторизация
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
-   - На главной странице нажать “Create a game”
-   - Выбрать level = 1 звезды
-   - Выбрать Game Type = With a bot
-   - Нажать “Create a battle”
-   - В редакторе вывода текста написать "Привет!"
-   - Нажать "Run"
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - В редакторе вывода текста написать "Привет!"
+    - Нажать "Run"
   expected-result: |
-   Осуществляется проверка введенного кода с выводом результата
+    Осуществляется проверка введенного кода с выводом результата
+
+- summary: |
+    Проверка кнопки "Back to Home" 
+  requirement: |
+    После нажатия на кнопку "Back to Home" во время турнира открывается главная страница сайта с возможностью вернуться в игру
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Back to Home"
+    - На главной странице нажать "Continue"
+  expected-result: |
+    Открывается главная страница сайта с возможностью вернуться в игру
+
+- summary: |
+    Проверка кнопки "Vim" 
+  requirement: |
+    После нажатия на кнопку "Vim" в редакторе введения кода открывается редактор Vim
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Vim"
+  expected-result: |
+    В редакторе вывода кода открывается редактор Vim 
+
+- summary: |
+    Проверка кнопки "Light" 
+  requirement: |
+    После нажатия на кнопку "Light" в редакторе введения кода включается темная тема
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Light" 
+  expected-result: |
+    В редакторе вывода кода включается темная тема
+
+- summary: |
+    Проверка кнопки "Rematch" 
+  requirement: |
+    После окончания игры после нажатия на кнопку "Rematch" открывается повторная игра между пользователями
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Rematch" 
+  expected-result: |
+    Открывается повторная игра между пользователями
+
+- summary: |
+    Проверка кнопки "Show guide" после окончания игры
+  requirement: |
+    После окончания игры после нажатия на кнопку "Show guide" открывается страница игры состоящая из 8 страниц с описанием главных кнопок страницы
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Show guide" 
+    - Нажать "Next 1/8"
+    - Нажать "Next 2/8"
+    - Нажать "Next 3/8"
+    - Нажать "Next 4/8"
+    - Нажать "Next 5/8"
+    - Нажать "Next 6/8"
+    - Нажать "Next 7/8"
+    - Нажать "Last 8/8"
+  expected-result: |
+    Открывается страница игры состоящая из 8 страниц с описанием главных кнопок страницы
+
+- summary: |
+    Проверка кнопки "Show guide" во время игры
+  requirement: |
+    Во время игры после нажатия на кнопку "Show guide" открывается страница игры состоящая из 8 страниц с описанием главных кнопок страницы
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Show guide" 
+    - Нажать "Next 1/8"
+    - Нажать "Next 2/8"
+    - Нажать "Next 3/8"
+    - Нажать "Next 4/8"
+    - Нажать "Next 5/8"
+    - Нажать "Next 6/8"
+    - Нажать "Next 7/8"
+    - Нажать "Last 8/8"
+  expected-result: |
+    Открывается страница игры состоящая из 8 страниц с описанием главных кнопок страницы
+
+- summary: |
+    Проверка кнопки "Back" в разделе "Show guide" 
+  requirement: |
+    После нажатия на кнопку "Back" в разделе "Show guide" страница игры возвращается на страницу назад
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Create a game”
+    - Выбрать level = 1 звезды
+    - Выбрать Game Type = With a bot
+    - Нажать “Create a battle”
+    - Нажать "Show guide" 
+    - Нажать "Next 1/8"
+    - Нажать "Next 2/8"
+    - Нажать "Next 3/8"
+    - Нажать "Next 4/8"
+    - Нажать "Next 5/8"
+    - Нажать "Next 6/8"
+    - Нажать "Next 7/8"
+    - Нажать "Last 8/8"
+    - Нажать "Back"
+    - Нажать "Back"
+    - Нажать "Back"
+    - Нажать "Back"
+    - Нажать "Back"
+    - Нажать "Back"
+    - Нажать "Back"
+  expected-result: |
+    Cтраница игры возвращается на страницу назад
+
+- summary: |
+    Проверка кнопки "Show guide" в разделе завершенных турниров
+  requirement: |
+    После нажатия на кнопку "Show guide" в разделе завершенных турниров открывается страница игры состоящая из 4 страниц с описанием главных кнопок страницы
+  prerequisites:
+    Необходима авторизация
+  test-data: |
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890
+  steps:
+    - На главной странице нажать “Completed Games”
+    - Выбрать игру нажав "Show"
+    - Нажать "Show guide" 
+    - Нажать "Next 1/8"
+    - Нажать "Next 2/8"
+    - Нажать "Next 4/8"
+    - Нажать "Next 4/8"
+    - Нажать "Last 8/8"
+  expected-result: |
+    Открывается страница игры состоящая из 4 страниц с описанием главных кнопок страницы
+
+    
+
+    
+
 
    
 
