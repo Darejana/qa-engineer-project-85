@@ -1106,7 +1106,7 @@
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
     - На главной странице нажать “Create a game”
-    - Выбрать level = 1 звезды
+    - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
     - Нажать “Create a battle”
     - Нажать "Show guide" 
@@ -1130,7 +1130,7 @@
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890
   steps:
     - На главной странице нажать “Create a game”
-    - Выбрать level = 1 звезды
+    - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
     - Нажать “Create a battle”
     - Нажать "Show guide" 
@@ -1229,7 +1229,7 @@
     Safari Version 16.5.2 (18615.2.9.11.10)
   steps:
     - На главной странице нажать “Create a game”
-    - Выбрать level = 1 звездf
+    - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
     - Нажать “Create a battle”
     - На странице турнира проверить отображение шапки сайта
@@ -1269,7 +1269,7 @@
     Chrome Version 115.0.5790.114 (Official Build) (arm64)
   steps:
     - На главной странице нажать “Create a game”
-    - Выбрать level = 1 звезды
+    - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
     - Нажать “Create a battle”
     - На странице турнира проверить отображение шапки сайта
@@ -1309,7 +1309,7 @@
     Firefox Version 111.0.1
   steps:
     - На главной странице нажать “Create a game”
-    - Выбрать level = 1 звезды
+    - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
     - Нажать “Create a battle”
     - На странице турнира проверить отображение шапки сайта
