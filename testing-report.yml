@@ -248,15 +248,15 @@
   status: pass
 
 - summary: |
-    Проверка кнопки "Show guide" после окончания игры
+    Проверка кнопки "Show guide" на странице турнира после окончания игры
   status: pass
 
 - summary: |
-    Проверка кнопки "Show guide" во время игры
+    Проверка кнопки "Show guide" на странице турнира во время игры
   status: pass
 
 - summary: |
-    Проверка кнопки "Back" в разделе "Show guide"
+    Проверка кнопки "Back" в разделе "Show guide" на странице турнира
   status: pass
 
 - summary: |
@@ -265,6 +265,10 @@
 
 - summary: |
     Проверка отображения онлайн-статуса пользователей в разделе "Online players" на главной странице
+  status: fail
+
+- summary: |
+    Проверка кнопки "Back" в "Show guide" в разделе “Completed Games”
   status: fail
 
 - summary: |
