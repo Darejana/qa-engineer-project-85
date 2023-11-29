@@ -260,8 +260,8 @@
   status: pass
 
 - summary: |
-    Проверка кнопки "Show guide" в разделе завершенных турниров
-  status: pass
+    Проверка кнопки "Show guide" в разделе “Completed Games”
+  status: fail
 
 - summary: |
     Проверка отображения онлайн-статуса пользователей в разделе "Online players" на главной странице
