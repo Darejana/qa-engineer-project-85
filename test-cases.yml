@@ -813,8 +813,7 @@
   prerequisites:
     Пользователь авторизован
   test-data: |
-    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
-  return width * length; }; module.exports = solution;"
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;"
   steps:
     - На главной странице нажать “Create a game”
     - Выбрать level = 1 звезда
@@ -822,8 +821,7 @@
     - Выбрать Task = rect_area
     - Нажать “Create battle”
     - В редакторе выбрать язык программирования "NodeJS"
-    - В редакторе ввести знчение = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
-  return width * length; }; module.exports = solution;"
+    - В редакторе ввести знчение = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;"
     - Нажать "Run"
     - Нажать “Output”
   expected-result: |
@@ -836,9 +834,7 @@
   prerequisites:
     Пользователь авторизован
   test-data: |
-    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => {
-  return width * length; }; module.exports = solution;"
-  steps:
+    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 
     - На главной странице нажать “Create a game”
     - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
