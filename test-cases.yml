@@ -835,6 +835,7 @@
     Пользователь авторизован
   test-data: |
     Электронная почта = user.examplee@mail.ru Пароль = 1234567890 
+  steps:
     - На главной странице нажать “Create a game”
     - Выбрать level = 1 звезда
     - Выбрать Game Type = With a bot
