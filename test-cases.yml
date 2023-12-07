@@ -790,25 +790,29 @@
     Редактор вывода кода воспроизводит запись игры к текущему моменту
 
 - summary: |
-    Проверка получения очков после завершения игры
+    Проверка получения очков после завершения игры с другим пользователем 
   requirement: |
-    После завершения игры в редакторе кода победителя отображается значение "Score:1" и корректно увеличились очки игрока
+    После завершения игры с другим пользователем в редакторе кода победителя отображается значение "Score:1" и корректно увеличились очки игрока
   prerequisites:
-    Пользователь авторизован
-    Открыта главная страница
+    Открыт аккаунт пользователя 1 на главной странице
+    Открыт аккаунт пользователя 2 на Сodebattle через GitHub
   test-data: |
-    Электронная почта = user.examplee@mail.ru Пароль = 1234567890 код = const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;
+    Электронная почта 1 пользователя = user.examplee@mail.ru Пароль 1 пользователя = 1234567890 Логин GitHub 2 пользователя = userexam Пароль GitHub 2 пользователя = 1234567890uex 
+    Код = const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;
   steps:
-    - Нажать “Create a game”
-    - Выбрать level = 1 звезда
-    - Выбрать Game Type = With a bot
-    - Выбрать Task = rect_area
-    - Нажать “Create battle”
-    - В редакторе кода выбрать язык программирования "NodeJS"
-    - Ввести в поле ввода кода значение "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;"
-    - Нажать "Run"
+    - Пользователю 1 на главной странице нажать “Create a game”
+    - Пользователю 1 выбрать level = 1 звезда
+    - Пользователю 1 выбрать Game Type = With a friend
+    - Пользователю 1 в списке друзей выбрать 2 пользователя ввести "userexam"
+    - Пользователю 1 выбрать Task = rect_area
+    - Пользователю 1 нажать “Create invite”
+    - Пользователю 2 в шапке сайта открыть раздел турниров 
+    - Пользователю 2 принять приглашение нажав "Accept" 
+    - Пользователю 1 в редакторе кода выбрать язык программирования "NodeJS"
+    - Пользователю 1 ввести в поле ввода кода значение "const _ = require("lodash"); const R = require("rambda");const solution = (width, length) => { return width * length; }; module.exports = solution;"
+    - Пользователю 1 нажать "Run"
   expected-result: |
-    В редакторе кода победителя отображается значение "Score:1" и корректно увеличились очки игрока
+    В редакторе кода победителя отображается значение "Score:1" и корректно увеличились очки игрока 
 
 - summary: |
     Проверка перевода на русский язык задания на странице турнира 
